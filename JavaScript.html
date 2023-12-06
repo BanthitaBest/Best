@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Portfolio - JavaScript LAB</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+        <script src="js.js"></script>
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            .sojvp .text {
+                color: black /* Your desired text color here */;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+        <div class="container-fluid bg-light">
+            <div class="container px-0">
+                <nav class="navbar navbar-light navbar-expand-xl">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="text-primary display-4">Banthita</h1>
+                    </a>
+                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
+                        <div class="navbar-nav mx-auto border-top">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="resume.html" class="nav-item nav-link">Resume</a>
+                            <a href="JavaScript.html" class="nav-item nav-link">JavaScript</a>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap pt-xl-0">
+                            <button class="btn-search btn btn-primary btn-primary-outline-0 rounded-circle btn-lg-square" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Appointment Start -->
+        <div class="container-fluid appointment py-5" style="background: var(--bs-primary);">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <!-- <div class="appointment-form p-5">
+                            <p class="fs-4 text-uppercase text-primary">Get In Touch</p>
+                            <h1 class="display-4 mb-4 text-white">Get Appointment</h1>
+                            <form>
+                                <div class="row gy-3 gx-4">
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control py-3 border-white bg-transparent text-white" placeholder="First Name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="email" class="form-control py-3 border-white bg-transparent text-white" placeholder="Email">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <select class="form-select py-3 border-white bg-transparent" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="date" class="form-control py-3 border-white bg-transparent">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <textarea class="form-control border-white bg-transparent text-white" name="text" id="area-text" cols="30" rows="5" placeholder="Write Comments"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="button" class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">SUBMIT NOW</button>
+                                    </div>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                     <div class="container-fluid appointment py-5 sojvp" style="background: var(--bs-primary);">
+                        <center><div class="container py-5">
+                            <!-- Other content -->
+                
+                            <div class="text" style="display: flex; flex-direction: column;">
+                                <br>
+                                <div style="width: 100%; float: left;">
+                                    <p style="margin-bottom: 10px;">ปุ่ม Calculate บวก และ คูณ<i class='bx bxs-calculator'></i></p>
+                                    <button class="custom-button calculate-button" onclick="calculate()">คำนวณ</button>
+                
+                                    <!-- Result Display -->
+                                    <div id="result">
+                                        <p id="sumResult"></p>
+                                        <p id="mulResult"></p>
+                                    </div>
+                                </div>
+                
+                                <div style="width: 100%; float: left;">
+                                    <p style="margin-bottom: 10px;">ปุ่ม ทอยเต๋า <i class='bx bx-dice-6'></i></p>
+                                    <button class="custom-button roll-button" id="rollButton" onclick="rollDice()">ทอยลูกเต๋า</button>
+                
+                                    <!-- Dice Roll Result -->
+                                    <p id="resultText"></p>
+                                </div>
+                
+                                <div style="clear: both;"></div>
+                
+                                <div style="width: 100%; float: left;">
+                                    <p style="margin-bottom: 10px;">ตัวหน้าจะเป็นตัวใหญ่ <i class='bx bx-up-arrow-alt'></i></p>
+                                    <p>*ภาษาอังกฤษเท่านั้น*</p>
+                                    <input type="text" id="inputText" placeholder="ENG พิมพ์เล็กนะจ๊ะ" style="font-size: 18;"><br>
+                                    <button style="margin-top: 5px;" onclick="convertToUpperCase()">Do it</button>
+                                    <p id="output"></p>
+                                </div>
+                
+                                <div style="width: 100%; float: left;">
+                                    <p style="margin-bottom: 10px;">คำนวณเส้นทแยงมุม <i class='bx bx-shape-triangle'></i></p>
+                                    <button onclick="calculateHypotenuse()">คำนวณ</button>
+                                    <p id="result2"></p>
+                                </div>
+                
+                                <div style="clear: both;"></div>
+                
+                                <div style="width: 100%; float: left;">
+                                    <br>
+                                    <div class="text">
+                                        <p style="margin-bottom: 10px;">แสดง Alert <i class='bx bx-error-alt'></i></p>
+                                        <button onclick="showAlert()">แสดง Alert</button>
+                                        
+                                    </div>
+                                </div><div style="clear: both;"></div>
+                            </div></center>
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Appointment End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <div class="position-relative mx-auto rounded-pill">
+                                <input class="form-control rounded-pill border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                                <button type="button" class="btn btn-primary btn-primary-outline-0 rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
+                    </div>
+          
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center">
+                            <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By<a class="border-bottom" href="https://www.instagram.com/_xxivmmiv_/">Banthita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>
